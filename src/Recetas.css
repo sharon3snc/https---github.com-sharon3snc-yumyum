@@ -1,0 +1,73 @@
+main{
+    margin-left: 50px;
+    margin-top:50px;
+}
+.recipename{
+    font-size: 24px;
+    font-weight: bolder;
+    display:flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.recipegrid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.recipedata{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.recipeImage{
+    border-radius: 8px;
+    width: 100%;
+    height: auto;
+}
+
+.cardbutton{
+    padding: 0.75rem 1rem;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    border: none;
+    transition: background-color 0.1s ease 0s, color 0.1s ease 0s;
+    color: rgb(144, 135, 102);
+    background-color: transparent;
+}
+
+.selectedbutton{
+    padding: 0.75rem 1rem;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    border: none;
+    transition: background-color 0.1s ease 0s, color 0.1s ease 0s;
+    color: white;
+    background-color:#025159 ;
+}
+
+.cardinfo{
+    padding: 0.5rem 2rem 2rem;
+    background-color: white;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(230, 230, 212);
+}
+
+.ingredients{
+    list-style: none;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-left: 0px;
+}
+
+.ingredientDetail{
+    display: grid;
+    grid-template-columns: minmax(100px, 1fr) auto;
+    gap: 1rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgb(230, 230, 212);
+}

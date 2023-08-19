@@ -2,7 +2,12 @@ const recipes = [
     {
       id: 1,
       name: 'Pollo asado con queso y pesto de tomates secos sobre ensalada italiana',
-      image: require('./images/ensalada1.jpeg')
+      image: require('./images/ensalada1.jpeg'),
+      time: '30 minutos',
+      cal: '400 kcal',
+      ingredients: [
+        {name:'Lechuga', quantity: '100 gr'}, 
+        {name:'Pollo', quantity: '200 gr'}]
     },
     {
       id: 2,

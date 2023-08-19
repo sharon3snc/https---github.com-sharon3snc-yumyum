@@ -48,7 +48,7 @@ section {
     display:flex;
     flex-direction: row;
     align-items: flex-start;
-    margin: 50px 50px 10px 50px;
+    margin: 20px 50px 10px 0px;
 }
 .buscador {
     flex-grow: 1;
@@ -64,7 +64,6 @@ section {
 .containerfiltros{
     line-height: 1.5;
     padding:10px 0px 10px 0px;
-    margin-left: 50px;
     display:flex;
     flex-direction: row;
 }
@@ -91,8 +90,7 @@ section {
 
 .cardcontainer {
     display: grid;
-    margin-top: 80px;
-    margin-left: 50px;
+    margin-top: 20px;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
     max-width: 1200px;

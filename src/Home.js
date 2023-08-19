@@ -1,10 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Home.css';
-import ensalada1 from './images/ensalada1.jpeg'
-import ensalada2 from './images/ensalada2.jpeg'
-import ensalada3 from './images/ensalada3.jpeg'
-import ensalada4 from './images/ensalada4.jpeg'
+import recipes from './datahome';
+//import ensalada1 from './images/ensalada1.jpeg'
+//import ensalada2 from './images/ensalada2.jpeg'
+//import ensalada3 from './images/ensalada3.jpeg'
+//import ensalada4 from './images/ensalada4.jpeg'
 
 function Home() {
   return (
@@ -19,6 +20,7 @@ function Home() {
           </ul>
         </nav>
       </header>
+
 
       {/* Contenido principal de la página */}
       <main>
@@ -44,6 +46,18 @@ function Home() {
                 <option value="6">Vegano</option></select>
             </div>
           </div>
+
+          <div class="cardcontainer">
+            {recipes.map((recipe, index) => (
+              <div class="card" key={index}>
+                <img src={recipe.image} alt=''/>
+                <div class="recipe">{recipe.name}</div>
+              </div>
+            ))}
+          </div>
+
+
+          {/* 
           <div class="cardcontainer">
             <div class="card">
               <img src={ensalada1} alt=''/>
@@ -61,9 +75,11 @@ function Home() {
               <img src={ensalada4} alt=''/>
               <div class="recipe"> Ensalada balsámica de rúcula con lentejas, tomate, pepino, aguacate y queso feta </div>
             </div>
-          </div>
+          </div> 
+          */}
         </section>
-      </main>
+      </main> 
+
 
       {/* Footer de la página */}
       <footer>

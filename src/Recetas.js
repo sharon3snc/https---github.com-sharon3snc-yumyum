@@ -30,6 +30,9 @@ function Recetas() {
                   <div className='time'>
                     30 minutos
                   </div>
+                  <div className='time'>
+                    400 kcal
+                  </div>
                   <div className='servings'>
                   <select class="menus">
                     <option value="-1">1 persona</option>
@@ -40,7 +43,7 @@ function Recetas() {
                   </div>
                 </div>
                 <div>
-                  <img src={ensalada1g} height={600} width={600} className='recipeImage'/>
+                  <img src={ensalada1g} alt='' height={600} width={600} className='recipeImage'/>
                 </div>
               </div>
               <div className='reciperight'>

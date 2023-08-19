@@ -36,6 +36,11 @@ main{
     transition: background-color 0.1s ease 0s, color 0.1s ease 0s;
     color: rgb(144, 135, 102);
     background-color: transparent;
+    font-size: 15px;
+}
+
+.time{
+    font-size: 15px;
 }
 
 .selectedbutton{
@@ -46,6 +51,7 @@ main{
     transition: background-color 0.1s ease 0s, color 0.1s ease 0s;
     color: white;
     background-color:#025159 ;
+    font-size: 15px;
 }
 
 .cardinfo{

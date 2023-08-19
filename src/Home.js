@@ -46,19 +46,19 @@ function Home() {
           </div>
           <div class="cardcontainer">
             <div class="card">
-              <img src={ensalada1}/>
+              <img src={ensalada1} alt=''/>
               <div class="recipe"> Pollo asado con queso y pesto de tomates secos sobre ensalada italiana </div>
             </div>
             <div class="card">
-              <img src={ensalada2}/>
+              <img src={ensalada2} alt=''/>
               <div class="recipe"> Ensalada de hamburguesa de huevo con queso, totopos y mostaza con miel </div>
             </div>
             <div class="card">
-              <img src={ensalada3}/>
+              <img src={ensalada3} alt=''/>
               <div class="recipe"> Tacos de calabacín y judías a la barbacoa con lechuga, pimienta y salsa ranch </div>
             </div>
             <div class="card">
-              <img src={ensalada4}/>
+              <img src={ensalada4} alt=''/>
               <div class="recipe"> Ensalada balsámica de rúcula con lentejas, tomate, pepino, aguacate y queso feta </div>
             </div>
           </div>

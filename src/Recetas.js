@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Recetas.css';
-import ensalada1g from './images/ensalada1g.jpeg'
+import ensalada1 from './images/ensalada1.jpeg'
 
 function Recetas() {
   return (
@@ -43,7 +43,7 @@ function Recetas() {
                   </div>
                 </div>
                 <div>
-                  <img src={ensalada1g} alt='' height={600} width={600} className='recipeImage'/>
+                  <img src={ensalada1} alt='' height={600} width={600} className='recipeImage'/>
                 </div>
               </div>
               <div className='reciperight'>

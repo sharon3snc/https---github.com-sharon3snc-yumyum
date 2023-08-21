@@ -1,10 +1,32 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Link } from 'react-router-dom';
 import './Home.css';
 import recipes from './datahome';
 
 
 function Home() {
+
+  const [selectedMenu, setSelectedMenu] = useState('-1');
+  const [selectedRestriccion, setSelectedRestriccion] = useState('-1');
+
+  const filteredRecipes = recipes.filter((recipe)=> {
+    if (
+      (selectedMenu === '-1' || recipe.menu === selectedMenu) &&
+      (selectedRestriccion === '-1' || recipe.restriccion === selectedRestriccion)
+    ) {
+      return true;
+    }
+    return false;
+  });
+
+  const handleMenuChange = (event) => {
+    setSelectedMenu(event.target.value);
+  };
+  
+  const handleRestriccionChange = (event) => {
+    setSelectedRestriccion(event.target.value);
+  };
+
   return (
     <div>
       {/* Header de la página */}
@@ -26,25 +48,24 @@ function Home() {
           </div>
           <div class="containerfiltros">
             <div class="filtros">
-              <select class="menus">
+              <select class="menus" value={selectedMenu} onChange={handleMenuChange}>
                 <option value="-1">Todos los menus</option>
-                <option value="1">Clásico</option>
-                <option value="7">Bajo en calorías</option>
-                <option value="2">Vegetariano</option>
-                <option value="6">Vegano</option></select>
+                <option value="Bajo en calorías">Bajo en calorías</option>
+                <option value="Vegetariano">Vegetariano</option>
+                <option value="Vegano">Vegano</option></select>
             </div>
             <div class="filtros">
-              <select class="menus">
+              <select class="menus" value={selectedRestriccion} onChange={handleRestriccionChange}>
                 <option value="-1">Sin restricciones</option>
-                <option value="1">Sin gluten</option>
-                <option value="7">Sin huevo</option>
-                <option value="2">Sin lactosa</option>
-                <option value="6">Vegano</option></select>
+                <option value="Sin gluten">Sin gluten</option>
+                <option value="Sin huevo">Sin huevo</option>
+                <option value="Sin lactosa">Sin lactosa</option>
+              </select>
             </div>
           </div>
 
           <div class="cardcontainer">
-            {recipes.map((recipe, index) => (
+            {filteredRecipes.map((recipe, index) => (
               <div class="card" key={index}>
                 <Link to={`/recetas/${recipe.id}`}>
                   <img src={recipe.image} alt=''/>

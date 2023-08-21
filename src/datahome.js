@@ -5,6 +5,8 @@ const recipes = [
       image: require('./images/ensalada1.jpeg'),
       time: '30 minutos',
       cal: '400 kcal',
+      menu: 'Bajo en calorías',
+      restriccion: 'Sin huevo',
       ingredients: [
         {name:'Lechuga', quantity: '100 gr'}, 
         {name:'Pollo', quantity: '200 gr'}],
@@ -16,6 +18,8 @@ const recipes = [
       image: require('./images/ensalada2.jpeg'),
       time: '30 minutos',
       cal: '400 kcal',
+      menu: 'Bajo en calorías',
+      restriccion: 'Sin lactosa',
       ingredients: [
         {name:'Lechuga', quantity: '100 gr'}, 
         {name:'Pollo', quantity: '200 gr'}],
@@ -27,6 +31,8 @@ const recipes = [
         image: require('./images/ensalada3.jpeg'),
         time: '30 minutos',
         cal: '400 kcal',
+        menu: 'Clásico',
+        restriccion: 'Sin restricciones',
         ingredients: [
             {name:'Lechuga', quantity: '100 gr'}, 
             {name:'Pollo', quantity: '200 gr'}],
@@ -38,6 +44,8 @@ const recipes = [
         image: require('./images/ensalada4.jpeg'),
         time: '30 minutos',
         cal: '400 kcal',
+        menu: 'Vegetariano',
+        restriccion: 'Sin huevo',
         ingredients: [
             {name:'Lechuga', quantity: '100 gr'}, 
             {name:'Pollo', quantity: '200 gr'}],
@@ -49,6 +57,8 @@ const recipes = [
         image: require('./images/ensalada5.jpeg'),
         time: '30 minutos',
         cal: '400 kcal',
+        menu: 'Bajo en calorías',
+        restriccion: 'Sin huevo',
         ingredients: [
             {name:'Lechuga', quantity: '100 gr'}, 
             {name:'Pollo', quantity: '200 gr'}],
@@ -60,6 +70,8 @@ const recipes = [
         image: require('./images/ensalada6.jpeg'),
         time: '30 minutos',
         cal: '400 kcal',
+        menu: 'Clásico',
+        restriccion: 'Sin gluten',
         ingredients: [
             {name:'Lechuga', quantity: '100 gr'}, 
             {name:'Pollo', quantity: '200 gr'}],
@@ -71,6 +83,8 @@ const recipes = [
         image: require('./images/ensalada7.jpeg'),
         time: '30 minutos',
         cal: '400 kcal',
+        menu: 'Clásico',
+        restriccion: 'Sin huevo',
         ingredients: [
             {name:'Lechuga', quantity: '100 gr'}, 
             {name:'Pollo', quantity: '200 gr'}],
@@ -82,6 +96,8 @@ const recipes = [
         image: require('./images/ensalada8.jpeg'),
         time: '30 minutos',
         cal: '400 kcal',
+        menu: 'Vegano',
+        restriccion: 'Sin huevo',
         ingredients: [
             {name:'Lechuga', quantity: '100 gr'}, 
             {name:'Pollo', quantity: '200 gr'}],

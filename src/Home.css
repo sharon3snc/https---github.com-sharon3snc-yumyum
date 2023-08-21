@@ -109,11 +109,17 @@ section {
     height: auto;
     border-radius: 8px 8px 0 0;
   }
+
+  .card a {
+    text-decoration: none; /* Elimina la decoración de subrayado */
+    color: black;
+  }
   
   .recipe {
     margin-top: 16px;
     font-size: 16px;
     color: #333333;
+    text-decoration: none;
   }
 
 

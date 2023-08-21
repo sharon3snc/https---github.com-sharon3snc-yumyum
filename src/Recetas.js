@@ -1,14 +1,47 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, {useState} from 'react';
+import { Link, useParams } from 'react-router-dom';
 import './Recetas.css';
 import recipes from './datahome'
 
 function Recetas() {
-  const recipe = recipes.find((recipe) => recipe.id === 1);
+  const { id } = useParams();
+  const recipe = recipes.find((recipe) => recipe.id.toString() === id);
 
-  if (!recipe) {
-    return <div>No se encontró la receta con id: 1</div>;
-  }
+  const [activeTab, setActiveTab] = useState('ingredients');
+
+  const handleTabClick = (tabName) => {
+    setActiveTab(tabName);
+  };
+
+  const renderContent = () => {
+    if (activeTab === "ingredients") {
+      return (
+        <ul className='ingredients'>
+          {recipe.ingredients.map((ingredient, index) => (
+            <li key={index}>
+              <div className='ingredientDetail'>            
+                <div>{ingredient.name}</div>
+                <div>{ingredient.quantity}</div>
+              </div>            
+            </li>            
+          ))}          
+        </ul>
+      );
+    } else if (activeTab === 'instructions') {
+      return (
+        <ul className="ingredients">
+          {recipe.instructions.map((instruction) => (
+            <li key={instruction.step}>
+            <div className="ingredientDetail">
+                <div>Paso {instruction.step}</div>
+                <div>{instruction.describe}</div>
+            </div>
+            </li>
+          ))}
+        </ul>  
+      );
+    }
+  };
 
   return (
     <div>
@@ -54,20 +87,15 @@ function Recetas() {
                 </div>
                 <div className='reciperight'>
                   <div className='cardtitles'>
-                    <button class='selectedbutton'>Ingredientes</button>
-                    <button class='cardbutton'>Instrucciones</button>
+                    <button className={activeTab === 'ingredients' ? 'selectedbutton' : 'cardbutton'} onClick={() => handleTabClick('ingredients')}>
+                      Ingredientes
+                    </button>
+                    <button className={activeTab === 'instructions' ? 'selectedbutton' : 'cardbutton'} onClick={() => handleTabClick('instructions')}>
+                      Instrucciones
+                    </button>
                   </div>
                   <div className='cardinfo'>
-                    <ul className='ingredients'>
-                    {recipe.ingredients.map((ingredient, index) => (
-                        <li key={index}>
-                          <div className='ingredientDetail'>
-                            <div>{ingredient.name}</div>
-                            <div>{ingredient.quantity}</div>
-                          </div>
-                        </li>
-                      ))}
-                    </ul>
+                  {renderContent()}
                   </div>
                 </div>
               </div>

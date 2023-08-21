@@ -12,8 +12,7 @@ function Home() {
         <h1>Yum Yum</h1>
         <nav>
           <ul>
-            <li><Link to="/recetas">Recetas</Link></li>
-            <li><a href="/sobre-nosotros">Login</a></li>
+            <li><a href="/login">Login</a></li>
           </ul>
         </nav>
       </header>
@@ -47,8 +46,10 @@ function Home() {
           <div class="cardcontainer">
             {recipes.map((recipe, index) => (
               <div class="card" key={index}>
-                <img src={recipe.image} alt=''/>
-                <div class="recipe">{recipe.name}</div>
+                <Link to={`/recetas/${recipe.id}`}>
+                  <img src={recipe.image} alt=''/>
+                  <div class="recipe">{recipe.name}</div>
+                </Link>
               </div>
             ))}
           </div>

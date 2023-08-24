@@ -8,10 +8,15 @@ function Recetas() {
   const recipe = recipes.find((recipe) => recipe.id.toString() === id);
 
   const [activeTab, setActiveTab] = useState('ingredients');
+  const [personas, setPersonas] = useState(1);
 
   const handleTabClick = (tabName) => {
     setActiveTab(tabName);
   };
+
+  const handlePeopleChange = (event) => {
+    setPersonas(Number(event.target.value));
+  }
 
   const renderContent = () => {
     if (activeTab === "ingredients") {
@@ -21,7 +26,7 @@ function Recetas() {
             <li key={index}>
               <div className='ingredientDetail'>            
                 <div>{ingredient.name}</div>
-                <div>{ingredient.quantity}</div>
+                <div>{(parseFloat(ingredient.quantity)*personas).toFixed(0)} gr</div>
               </div>            
             </li>            
           ))}          
@@ -73,11 +78,11 @@ function Recetas() {
                       {recipe.cal}
                     </div>
                     <div className='servings'>
-                      <select className="menus">
-                        <option value="-1">1 persona</option>
-                        <option value="1">2 personas </option>
-                        <option value="7">3 personas </option>
-                        <option value="2">4 personas</option>
+                      <select className="menus" value={personas} onChange = {handlePeopleChange}> 
+                        <option value="1">1 persona</option>
+                        <option value="2">2 personas </option>
+                        <option value="3">3 personas </option>
+                        <option value="4">4 personas</option>
                       </select>
                     </div>
                   </div>

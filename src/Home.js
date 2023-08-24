@@ -6,13 +6,13 @@ import recipes from './datahome';
 
 function Home() {
 
-  const [selectedMenu, setSelectedMenu] = useState('-1');
-  const [selectedRestriccion, setSelectedRestriccion] = useState('-1');
+  const [selectedMenu, setSelectedMenu] = useState('Todos');
+  const [selectedRestriccion, setSelectedRestriccion] = useState('Todos');
 
   const filteredRecipes = recipes.filter((recipe)=> {
     if (
-      (selectedMenu === '-1' || recipe.menu === selectedMenu) &&
-      (selectedRestriccion === '-1' || recipe.restriccion === selectedRestriccion)
+      (selectedMenu === 'Todos' || recipe.menu === selectedMenu) &&
+      (selectedRestriccion === 'Todos' || recipe.restriccion === selectedRestriccion)
     ) {
       return true;
     }
@@ -49,14 +49,14 @@ function Home() {
           <div class="containerfiltros">
             <div class="filtros">
               <select class="menus" value={selectedMenu} onChange={handleMenuChange}>
-                <option value="-1">Todos los menus</option>
+                <option value="Todos">Todos los menus</option>
                 <option value="Bajo en calorías">Bajo en calorías</option>
                 <option value="Vegetariano">Vegetariano</option>
                 <option value="Vegano">Vegano</option></select>
             </div>
             <div class="filtros">
               <select class="menus" value={selectedRestriccion} onChange={handleRestriccionChange}>
-                <option value="-1">Sin restricciones</option>
+                <option value="Todos">Sin restricciones</option>
                 <option value="Sin gluten">Sin gluten</option>
                 <option value="Sin huevo">Sin huevo</option>
                 <option value="Sin lactosa">Sin lactosa</option>

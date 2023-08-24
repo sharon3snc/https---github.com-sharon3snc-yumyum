@@ -103,7 +103,27 @@ section {
     padding: 16px;
     text-align: center;
   }
-  
+
+  .selected {
+    border: 2px solid #025159;
+}
+
+.selected button, button {
+    background-color: transparent;
+    color: #025159;
+    border: 2px solid #025159;
+    padding: 8px 16px;
+    font-size: 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.selected button:hover {
+    background-color: #025159;
+    color: white;
+  }
+
   .card img {
     max-width: 100%;
     height: auto;

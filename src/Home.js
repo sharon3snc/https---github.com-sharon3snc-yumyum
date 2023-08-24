@@ -2,10 +2,10 @@ import React, {useState} from 'react';
 import { Link } from 'react-router-dom';
 import './Home.css';
 import recipes from './datahome';
-
+import { usePlanContext } from './PlanContext';
 
 function Home() {
-
+  const {mealPlan, setMealPlan} = usePlanContext();
   const [selectedMenu, setSelectedMenu] = useState('Todos');
   const [selectedRestriccion, setSelectedRestriccion] = useState('Todos');
 
@@ -27,6 +27,20 @@ function Home() {
     setSelectedRestriccion(event.target.value);
   };
 
+  const addToMealPlan = (recipe) => {
+    setMealPlan((prevMealPlan) => [...prevMealPlan, recipe]);
+  };
+
+  const getCardClassName = (recipe) => {
+    return mealPlan.includes(recipe) ? "card selected" : "card";
+  }
+
+  const removeFromMealPlan = (recipe) => {
+    setMealPlan((prevMealPlan) =>
+    prevMealPlan.filter((selectedRecipe) => selectedRecipe !== recipe)
+  );
+  };
+
   return (
     <div>
       {/* Header de la página */}
@@ -34,6 +48,7 @@ function Home() {
         <h1>Yum Yum</h1>
         <nav>
           <ul>
+            <li><a href="/planes">Planes</a></li>
             <li><a href="/login">Login</a></li>
           </ul>
         </nav>
@@ -43,19 +58,19 @@ function Home() {
       {/* Contenido principal de la página */}
       <main>
         <section>
-          <div class="containerbuscador">
-              <input class="buscador" type="text" placeholder="¿Qué tienes en la nevera?"/> 
+          <div className="containerbuscador">
+              <input className="buscador" type="text" placeholder="¿Qué tienes en la nevera?"/> 
           </div>
-          <div class="containerfiltros">
-            <div class="filtros">
-              <select class="menus" value={selectedMenu} onChange={handleMenuChange}>
+          <div className="containerfiltros">
+            <div className="filtros">
+              <select className="menus" value={selectedMenu} onChange={handleMenuChange}>
                 <option value="Todos">Todos los menus</option>
                 <option value="Bajo en calorías">Bajo en calorías</option>
                 <option value="Vegetariano">Vegetariano</option>
                 <option value="Vegano">Vegano</option></select>
             </div>
-            <div class="filtros">
-              <select class="menus" value={selectedRestriccion} onChange={handleRestriccionChange}>
+            <div className="filtros">
+              <select className="menus" value={selectedRestriccion} onChange={handleRestriccionChange}>
                 <option value="Todos">Sin restricciones</option>
                 <option value="Sin gluten">Sin gluten</option>
                 <option value="Sin huevo">Sin huevo</option>
@@ -64,16 +79,22 @@ function Home() {
             </div>
           </div>
 
-          <div class="cardcontainer">
+          <div className="cardcontainer">
             {filteredRecipes.map((recipe, index) => (
-              <div class="card" key={index}>
+              <div className={getCardClassName(recipe)} key={index}>
                 <Link to={`/recetas/${recipe.id}`}>
                   <img src={recipe.image} alt=''/>
-                  <div class="recipe">{recipe.name}</div>
+                  <div className="recipe">{recipe.name}</div>
                 </Link>
+                {mealPlan.includes(recipe) ? (
+                  <button onClick={() => removeFromMealPlan(recipe)}>Eliminar</button>
+                ) : (
+                  <button onClick={() => addToMealPlan(recipe)}>Agregar al plan</button>
+                )}
               </div>
             ))}
           </div>
+
         </section>
       </main> 
 

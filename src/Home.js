@@ -30,6 +30,7 @@ function Home() {
   const addToMealPlan = (recipe) => {
     setMealPlan((prevMealPlan) => [...prevMealPlan, recipe]);
   };
+  console.log(mealPlan);
 
   const getCardClassName = (recipe) => {
     return mealPlan.includes(recipe) ? "card selected" : "card";

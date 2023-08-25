@@ -4,15 +4,18 @@ import './App.css';
 import Home from './Home';
 import Recetas from './Recetas';
 import Planes from './Planes';
+import { PlanProvider } from './PlanContext';
 
 function App() {
   return (
     <Router>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/recetas/:id" element={<Recetas />} />
-        <Route path="/planes" element={<Planes />} />
-      </Routes>
+      <PlanProvider>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/recetas/:id" element={<Recetas />} />
+          <Route path="/planes" element={<Planes />} />
+        </Routes>
+      </PlanProvider>
     </Router>
   );
 }

@@ -39,7 +39,7 @@ function Home() {
   const removeFromMealPlan = (recipe) => {
     setMealPlan((prevMealPlan) =>
     prevMealPlan.filter((selectedRecipe) => selectedRecipe !== recipe)
-  );
+    );
   };
 
   return (

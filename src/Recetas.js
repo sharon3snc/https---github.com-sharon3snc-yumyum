@@ -26,7 +26,11 @@ function Recetas() {
             <li key={index}>
               <div className='ingredientDetail'>            
                 <div>{ingredient.name}</div>
-                <div>{(parseFloat(ingredient.quantity)*personas).toFixed(0)} gr</div>
+                <div>{parseFloat(ingredient.quantity) > 0
+                ? `${(parseFloat(ingredient.quantity) * personas).toFixed(0)}`
+                : ''}
+                </div>
+                <span>{ingredient.unit}</span>
               </div>            
             </li>            
           ))}          
@@ -37,7 +41,7 @@ function Recetas() {
         <ul className="ingredients">
           {recipe.instructions.map((instruction) => (
             <li key={instruction.step}>
-            <div className="ingredientDetail">
+            <div className="instructionDetail">
                 <div>Paso {instruction.step}</div>
                 <div>{instruction.describe}</div>
             </div>

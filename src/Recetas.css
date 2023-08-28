@@ -1,6 +1,7 @@
 section{
     margin-left: 50px;
     margin-top:50px;
+    margin-right: 50px;
 }
 .recipename{
     font-size: 24px;
@@ -71,9 +72,20 @@ section{
 
 .ingredientDetail{
     display: grid;
+    grid-template-columns: minmax(100px, 1fr) auto auto;
+    gap: 1rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgb(230, 230, 212);
+    justify-items: start;
+}
+
+.instructionDetail{
+    display: grid;
     grid-template-columns: minmax(100px, 1fr) auto;
     gap: 1rem;
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
     border-bottom: 1px solid rgb(230, 230, 212);
+    justify-items: start;
 }

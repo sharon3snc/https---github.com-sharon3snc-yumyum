@@ -102,7 +102,7 @@ function Home() {
 
       {/* Footer de la página */}
       <footer>
-        <p>Contacto: correo@tudireccion.com</p>
+        <p>Contacto: <a href="mailto:info@yumyum.com">info@yumyum.com</a></p>
         <nav>
           <ul>
             <li><a href="/terminos-y-condiciones">Términos y Condiciones</a></li>

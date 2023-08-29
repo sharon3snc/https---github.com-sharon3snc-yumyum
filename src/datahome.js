@@ -122,14 +122,31 @@ const recipes = [
         id: 5,
         name: 'Atún al pesto de tomate y albahaca se derrite con ensalada verde mixta italiana',
         image: require('./images/ensalada5.jpeg'),
-        time: '30 minutos',
+        time: '20 minutos',
         cal: '400 kcal',
         menu: 'Bajo en calorías',
         restriccion: 'Sin huevo',
         ingredients: [
-            {name:'Lechuga', quantity: '100 gr'}, 
-            {name:'Pollo', quantity: '200 gr'}],
-        instructions: [{step: 1, describe:'Cortar el pollo en trozos de 2cm'}, {step: 2, describe:'Colocar la lechuga en el plato'} ]
+            {name:'Pesto de albahaca', quantity: '1/2', unit: 'taza'},
+            {name:'ALcaparra', quantity: '1/2', unit: 'cda'},
+            {name:'Atún en lata', quantity: '1', unit: 'lata'},
+            {name:'Pepino', quantity: '1/2', unit: 'unid'},
+            {name:'Queso rallado', quantity: '1/2', unit: 'taza'},
+            {name:'Tomate', quantity: '1', unit: 'unid'},
+            {name:'Pan integral', quantity: '2', unit: 'unid'},
+            {name:'Pimienta negra', quantity: '', unit: ''},
+            {name:'Mayonesa', quantity: '', unit: ''},
+            {name:'Sal', quantity: '', unit: ''},
+        ],
+        instructions: [
+            {step: 1, describe:'Precaliente el horno para asar a temperatura alta. Tuesta las rebanadas de pan integral en horno o en tostadora.'}, 
+            {step: 2, describe:'Abre la lata de atún y escúrrelo. Colócalo en un tazón mediano y desmenúzalo con un tenedor. Condimenta con sal y pimienta.'},
+            {step: 3, describe:'Escurrir y picar las alcaparras. Agrega al bol con el atún junto con el pesto, la mayonesa, la sal y la pimienta. Revuelve para combinar la ensalada de atún y reserva.'},
+            {step: 4, describe:'Lava y corta el tomate en rodajas finas y el pepino en medias lunas. Condimenta con sal y pimienta. '},
+            {step: 5, describe:'Divide la ensalada de atún entre las tostadas y extiéndela en una capa uniforme; cubre con rodajas de tomate y espolvorea con queso.'},
+            {step: 6, describe:'Coloca las tostadas en el horno a temperatura alta y espera hasta que el queso se derrita y burbujee.'},
+            {step: 7, describe:'Para servir, divide el atún derretido y las verduras mixtas en platos; cubre las verduras con pepino y rocía con el aderezo. ¡A Disfrutar!'}
+        ]
     },
     {
         id: 6,
@@ -140,9 +157,27 @@ const recipes = [
         menu: 'Clásico',
         restriccion: 'Sin gluten',
         ingredients: [
-            {name:'Lechuga', quantity: '100 gr'}, 
-            {name:'Pollo', quantity: '200 gr'}],
-        instructions: [{step: 1, describe:'Cortar el pollo en trozos de 2cm'}, {step: 2, describe:'Colocar la lechuga en el plato'} ]
+            {name:'Floretes de brócoli', quantity: '100', unit: 'gr'},
+            {name:'Floretes de coliflor', quantity: '100', unit: 'gr'},
+            {name:'Filetes de ternera', quantity: '150', unit: 'gr'},
+            {name:'Chalote', quantity: '1/2', unit: 'unid'},
+            {name:'Pimienta negra', quantity: '', unit: ''},
+            {name:'Azúcar morena', quantity: '', unit: ''},
+            {name:'Ajo en polvo', quantity: '', unit: ''},
+            {name:'Sal', quantity: '', unit: ''},
+            {name:'Semillas de sésamo', quantity: '', unit: ''},
+            {name:'Aceite de sésamo', quantity: '', unit: ''},
+        ],
+        instructions: [
+            {step: 1, describe:'Precaliente una sartén para parrilla, una parrilla al aire libre o una sartén normal a fuego medio-alto.'}, 
+            {step: 2, describe:'Mientras la parrilla se calienta, seca el filete de ternera con toallas de papel y colóquelo en un plato; sazone con sal y pimienta por ambos lados.'},
+            {step: 3, describe:'Una vez que la parrilla esté caliente, cúbrala con aceite; agregue el bistec y cocine hasta el punto deseado, de 2 a 5 minutos por lado. Transfiera a un plato limpio, cubra sin apretar con papel de aluminio y deje reposar durante 5 minutos.'}, 
+            {step: 4, describe:'Mientras tanto, llene una cacerola mediana con 2 pulgadas de agua caliente (del grifo), cubra y deje hervir a fuego alto.'},
+            {step: 5, describe:'Mientras el agua hierve, pela y pica la chalota. Colóquelo en un tazón pequeño junto con la pasta de miso, la salsa de chile y ajo, el aceite, las semillas de sésamo, el azúcar y el ajo en polvo. Revuelva para combinar la salsa de miso picante y reserve.'}, 
+            {step: 6, describe:'Una vez que el agua esté hirviendo, reduzca el fuego a medio, luego agregue la coliflor y el brócoli. Vuelva a tapar y cocine al vapor hasta que las verduras estén tiernas, de 5 a 6 minutos.'},
+            {step: 7, describe:'Cuando las verduras estén cocidas, escurrirlas y devolverlas a la sartén. Rocíe con aceite, espolvoree con semillas de sésamo y sazone con sal y pimienta; revuelva para cubrir.'}, 
+            {step: 8, describe:'Para servir, corta el filete de ternera y rocíe con salsa de miso picante.  Coloca las verduras en platos. ¡A disfrutar!'},
+        ]
     },
     {
         id: 7,
@@ -153,9 +188,30 @@ const recipes = [
         menu: 'Clásico',
         restriccion: 'Sin huevo',
         ingredients: [
-            {name:'Lechuga', quantity: '100 gr'}, 
-            {name:'Pollo', quantity: '200 gr'}],
-        instructions: [{step: 1, describe:'Cortar el pollo en trozos de 2cm'}, {step: 2, describe:'Colocar la lechuga en el plato'} ]
+            {name:'Pechuga de pollo', quantity: '150', unit: 'gr'},
+            {name:'Pepino', quantity: '1/2', unit: 'unid'},
+            {name:'Cebolleta', quantity: '1', unit: 'unid'},
+            {name:'Mantequilla de cacahuete', quantity: '30', unit: 'gr'},
+            {name:'Zanahoria rallada', quantity: '50', unit: 'gr'},
+            {name:'Guisantes', quantity: '50', unit: 'gr'},
+            {name:'Fideos de arroz', quantity: '100', unit: 'gr'},
+            {name:'Pimienta negra', quantity: '', unit: ''},
+            {name:'Sal', quantity: '', unit: ''},
+            {name:'Salsa de soja', quantity: '', unit: ''},
+            {name:'Aceite de sésamo', quantity: '', unit: ''},
+        ],
+        instructions: [
+            {step: 1, describe:'Llene una cacerola mediana hasta la mitad con agua caliente (del grifo), tápela y déjela hervir. Retirar del fuego, destapar y agregar los fideos de arroz. Remoje durante 10 minutos o según las instrucciones del paquete. Escurrir en un colador y enjuagar con agua fría.'}, 
+            {step: 2, describe:'Mientras tanto, lava y seca los productos frescos. Recorte y corte las cebollas verdes en forma transversal en trozos finos. Colóquelo en un tazón pequeño.'},
+            {step: 3, describe:'Reduzca a la mitad los guisantes en forma transversal. Agregue al bol con las cebollas verdes y reserve.'},
+            {step: 4, describe:'Precalienta una sartén a fuego medio-alto.Mientras la sartén se calienta, seque el pollo con toallas de papel y córtelo en trozos pequeños. Condimentar con sal y pimienta.'},
+            {step: 5, describe:'Una vez que la sartén esté caliente, agregue aceite y revuelva para cubrir el fondo. Agregue el pollo y cocine, revolviendo ocasionalmente, hasta que esté dorado y casi cocido, de 3 a 4 minutos.'},
+            {step: 6, describe:'Agregue las cebollas verdes y los guisantes a la sartén. Cocine, revolviendo ocasionalmente, hasta que las verduras estén tiernas y el pollo bien cocido, de 3 a 4 minutos.'},
+            {step: 7, describe:'Mientras tanto, usando una tabla de cortar limpia, recorte y corte el pepino por la mitad a lo largo, luego córtelo transversalmente en medias lunas finas.'},
+            {step: 8, describe:'Cuando el pollo y las verduras estén cocidos, agregue la salsa de maní, el agua y la salsa de soja a la sartén. Continúe cocinando, revolviendo ocasionalmente, hasta que la salsa esté bien caliente y espesa un poco, 2-3 minutos más.'},
+            {step: 9, describe:'Agregue los fideos escurridos a la sartén, mezcle para combinar todos los ingredientes y retire del fuego.'} ,
+            {step: 10, describe: 'Para servir, divida los fideos con salsa, el pollo y las verduras en tazones; cubra con pepino y zanahorias. ¡A disfrutar!'} 
+        ]
     },
     {
         id: 8,
@@ -166,9 +222,25 @@ const recipes = [
         menu: 'Vegano',
         restriccion: 'Sin huevo',
         ingredients: [
-            {name:'Lechuga', quantity: '100 gr'}, 
-            {name:'Pollo', quantity: '200 gr'}],
-        instructions: [{step: 1, describe:'Cortar el pollo en trozos de 2cm'}, {step: 2, describe:'Colocar la lechuga en el plato'} ]
+            {name:'Caldo de pollo', quantity: '200', unit: 'ml'},
+            {name:'Pepino', quantity: '1/2', unit: 'unid'},
+            {name:'Ajo', quantity: '1', unit: 'diente'},
+            {name:'Nata para cocinar', quantity: '30', unit: 'ml'},
+            {name:'Hummus', quantity: '50', unit: 'gr'},
+            {name:'Queso parmesano', quantity: '1/2', unit: 'taza'},
+            {name:'Pimientos en conserva', quantity: '100', unit: 'gr'},
+            {name:'Tomate', quantity: '2', unit: 'unid'},
+            {name:'Pan de pita', quantity: '2', unit: 'unid'},
+            {name:'Sal', quantity: '', unit: ''},
+            {name:'Pimienta negra', quantity: '', unit: ''},
+        ],
+        instructions: [
+            {step: 1, describe:'Pela los ajos. Escurrir los pimientos asados. Agrega a la licuadora junto con el caldo, la crema, la sal y la pimienta. Licue la sopa hasta que quede suave, 1-2 minutos.'}, 
+            {step: 2, describe:'Vierta la sopa en una olla grande y cocine a fuego medio-alto, revolviendo ocasionalmente. Una vez que hierva a fuego lento, retirar del fuego.'},
+            {step: 3, describe:'Mientras tanto, lave, seque y corte los tomates en rodajas finas. Haz lo mismo con el pepeino. Colócalos en un plato y sazona con sal y pimienta.'},
+            {step: 4, describe:'Corta las pitas por la mitad y abre con cuidado los bolsillos. Unte cada bolsillo con hummus y luego rellénelo con rodajas de tomate y pepino.'},
+            {step: 5, describe:'Divida la sopa en tazones y espolvoree con queso parmesano; sirva con bolsillos de pita a un lado. ¡A disfrutar!'}
+        ]
     },
 
   ];

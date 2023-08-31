@@ -1,0 +1,18 @@
+.planescontainer {
+    margin: 20px 20px 20px 20px;
+}
+
+.menus{
+    text-align: center;
+}
+
+.ingredients-list {
+  margin-top: 10px;
+  padding-left: 0;
+  list-style: none;
+}
+
+.ingredients-list li {
+  margin-bottom: 5px;
+}
+

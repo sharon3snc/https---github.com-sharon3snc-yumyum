@@ -83,9 +83,16 @@ section{
 .instructionDetail{
     display: grid;
     grid-template-columns: minmax(100px, 1fr) auto;
-    gap: 1rem;
+    gap: 5px;
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
     border-bottom: 1px solid rgb(230, 230, 212);
-    justify-items: start;
+}
+
+.leftColumn{
+    max-width: 100px;
+}
+
+.rightColumn{
+    justify-self: left;
 }

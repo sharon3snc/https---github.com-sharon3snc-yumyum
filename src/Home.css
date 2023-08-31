@@ -1,34 +1,55 @@
 header {
     background-color: #025159;
-    color: #fff;
     padding: 10px 10px 10px 0px;
     text-align: center;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: space-between;
     padding-left: 50px; 
 }
 
 h1 {
     margin: 0px;
     padding: 0px 50px 0px 0px;
+    color: #fff;
 }
 
 nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
+    display: flex;
+    align-items: center;
 }
 
 nav ul li {
     display: inline-block;
     align-items: center;
-    margin-right: 20px;
+    margin-right: 50px;
+}
+
+.login-link a {
+    margin-left: auto;
+    color: #fff;
+}
+
+.plan-link {
+  background-color: white;
+  padding: 8px 16px;
+  border: 2px solid #025159;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.plan-link a{
+      color: #025159;
 }
 
 nav ul li a {
     text-decoration: none;
-    color: #fff;
     font-size: 18px;
 }
 

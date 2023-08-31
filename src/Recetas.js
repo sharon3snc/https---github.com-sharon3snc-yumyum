@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import { Link, useParams } from 'react-router-dom';
 import './Recetas.css';
-import recipes from './datahome'
+import recipes from './datahome';
 
 function Recetas() {
   const { id } = useParams();
@@ -42,8 +42,8 @@ function Recetas() {
           {recipe.instructions.map((instruction) => (
             <li key={instruction.step}>
             <div className="instructionDetail">
-                <div>Paso {instruction.step}</div>
-                <div>{instruction.describe}</div>
+                <div className= "leftColumn">Paso {instruction.step}</div>
+                <div className= "rightColumn">{instruction.describe}</div>
             </div>
             </li>
           ))}

@@ -8,16 +8,25 @@ function Home() {
   const {mealPlan, setMealPlan} = usePlanContext();
   const [selectedMenu, setSelectedMenu] = useState('Todos');
   const [selectedRestriccion, setSelectedRestriccion] = useState('Todos');
+  const [searchQuery, setSearchQuery] = useState('');
 
-  const filteredRecipes = recipes.filter((recipe)=> {
-    if (
-      (selectedMenu === 'Todos' || recipe.menu === selectedMenu) &&
-      (selectedRestriccion === 'Todos' || recipe.restriccion === selectedRestriccion)
-    ) {
-      return true;
-    }
-    return false;
+  const filteredRecipes = recipes.filter((recipe) => {
+    const isMenuMatch =
+      selectedMenu === 'Todos' || recipe.menu === selectedMenu;
+    const isRestriccionMatch =
+      selectedRestriccion === 'Todos' || recipe.restriccion === selectedRestriccion;
+    const isSearchMatch =
+      searchQuery === '' ||
+      recipe.ingredients.some((ingredient) =>
+        ingredient.name.toLowerCase().includes(searchQuery.toLowerCase())
+      );
+
+    return isMenuMatch && isRestriccionMatch && isSearchMatch;
   });
+
+  const handleSearchChange= (event) => {
+    setSearchQuery(event.target.value);
+  };
 
   const handleMenuChange = (event) => {
     setSelectedMenu(event.target.value);
@@ -49,8 +58,14 @@ function Home() {
         <h1>Yum Yum</h1>
         <nav>
           <ul>
-            <li><a href="/planes">Planes</a></li>
-            <li><a href="/login">Login</a></li>
+            {mealPlan.length > 0 && (
+                <li className="plan-link">
+                <Link to="/planes">Ir al Plan</Link>
+              </li>
+            )}
+            <li className="login-link">
+              <a href="/login">Login</a>
+            </li>
           </ul>
         </nav>
       </header>
@@ -60,7 +75,7 @@ function Home() {
       <main>
         <section>
           <div className="containerbuscador">
-              <input className="buscador" type="text" placeholder="¿Qué tienes en la nevera?"/> 
+              <input className="buscador" type="text" placeholder="¿Qué tienes en la nevera?" value={searchQuery} onChange={handleSearchChange} /> 
           </div>
           <div className="containerfiltros">
             <div className="filtros">

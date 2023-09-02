@@ -1,9 +1,22 @@
 .planescontainer {
     margin: 20px 20px 20px 20px;
+    max-width: 60vw;
 }
 
 .menus{
     text-align: center;
+}
+
+.ingredients-container{
+  margin: 20px 20px 20px 20px;
+}
+
+.listcontainer{
+  padding: 0.5rem 2rem 2rem;
+    background-color: white;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(230, 230, 212);
 }
 
 .ingredients-list {
@@ -16,3 +29,8 @@
   margin-bottom: 5px;
 }
 
+main {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}

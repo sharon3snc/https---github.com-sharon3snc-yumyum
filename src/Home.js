@@ -37,7 +37,10 @@ function Home() {
   };
 
   const addToMealPlan = (recipe) => {
-    setMealPlan((prevMealPlan) => [...prevMealPlan, recipe]);
+    const isRecipeInMealPlan = mealPlan.some((selectedRecipe) => selectedRecipe.id === recipe.id);
+    if (!isRecipeInMealPlan) {
+      setMealPlan((prevMealPlan) => [...prevMealPlan, recipe]);
+    }
   };
   console.log(mealPlan);
 

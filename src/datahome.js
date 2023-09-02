@@ -29,7 +29,8 @@ const recipes = [
         {step:6, describe:'Separa las hojas de albahaca de los tallos y córtalas en tiras finas. Agrega al tazón, revuelve para combinar la ensalada y reserva.'},
         {step:7, describe:"Cuando el pollo esté casi cocido, retíralo del horno. Unta cada trozo con pesto y espolvorea con queso. Regresa al horno y continúa hasta que el queso se derrita y el pollo esté bien cocido, 2-3 minutos más. Retirar del horno."},
         {step:8, describe:"Para servir, divide la ensalada en platos o tazones y rocía con vinagre balsámico; cubre con pollo. ¡Y a disfrutar!"},
-    ]
+    ],
+    comensales:1,
     },
     {
       id: 2,
@@ -57,7 +58,8 @@ const recipes = [
         {step: 4, describe:"Corta los tomates en rodajas, el pepino medias lunas finas y el pimiento en dados pequeños. Agrega al bol de ensalada."},
         {step: 5, describe:'Desmenuza los nachos sobre la ensalada, y añad el aderezo de miel y mostaza.' },
         {step: 6, describe:'Cuando las hamburguesas estén listas, córtelas en tiras y sirve sobre de la ensalada.' }
-    ]
+    ],
+    comensales:1,
     },
     {
         id: 3,
@@ -88,7 +90,8 @@ const recipes = [
             {step: 4, describe:'Corta la lechuga en tiras finas y el pimiento amarillo en dados pequeños. Agrega al un bol, junto con el aderezp y revuelve para combinar la ensalada.' },
             {step: 5, describe:"Cuando los calabacines y las judías estén cocidas, agrega la salsa barbacoa a la sartén y revuelve para combinar. Alejar del calor."},
             {step: 6, describe:"Calienta las totillas, rellénalas con la mezcla de ingredientes calientes y fríos.¡A disfrutar!"},
-        ]
+        ],
+        comensales:1,
     },
     {
         id: 4,
@@ -116,7 +119,8 @@ const recipes = [
             {step: 3, describe:'Corta el tomate, el aguacate y el pepino en dados pequeños. Pica las hojas de perejil.'},
             {step: 4, describe:'Agrega los ingredientes a un bol, añade el queso feta y el vinagre balsámico y revuelve.'},
             {step: 5, describe:'Sirve la rúcula en platos y cubre con la ensalada de lentejas. ¡A disfrutar!'},
-        ]
+        ],
+        comensales:1,
     },
     {
         id: 5,
@@ -146,7 +150,8 @@ const recipes = [
             {step: 5, describe:'Divide la ensalada de atún entre las tostadas y extiéndela en una capa uniforme; cubre con rodajas de tomate y espolvorea con queso.'},
             {step: 6, describe:'Coloca las tostadas en el horno a temperatura alta y espera hasta que el queso se derrita y burbujee.'},
             {step: 7, describe:'Para servir, divide el atún derretido y las verduras mixtas en platos; cubre las verduras con pepino y rocía con el aderezo. ¡A Disfrutar!'}
-        ]
+        ],
+        comensales:1,
     },
     {
         id: 6,
@@ -177,7 +182,8 @@ const recipes = [
             {step: 6, describe:'Una vez que el agua esté hirviendo, reduzca el fuego a medio, luego agregue la coliflor y el brócoli. Vuelva a tapar y cocine al vapor hasta que las verduras estén tiernas, de 5 a 6 minutos.'},
             {step: 7, describe:'Cuando las verduras estén cocidas, escurrirlas y devolverlas a la sartén. Rocíe con aceite, espolvoree con semillas de sésamo y sazone con sal y pimienta; revuelva para cubrir.'}, 
             {step: 8, describe:'Para servir, corta el filete de ternera y rocíe con salsa de miso picante.  Coloca las verduras en platos. ¡A disfrutar!'},
-        ]
+        ],
+        comensales:1,
     },
     {
         id: 7,
@@ -211,7 +217,8 @@ const recipes = [
             {step: 8, describe:'Cuando el pollo y las verduras estén cocidos, agregue la salsa de maní, el agua y la salsa de soja a la sartén. Continúe cocinando, revolviendo ocasionalmente, hasta que la salsa esté bien caliente y espesa un poco, 2-3 minutos más.'},
             {step: 9, describe:'Agregue los fideos escurridos a la sartén, mezcle para combinar todos los ingredientes y retire del fuego.'} ,
             {step: 10, describe: 'Para servir, divida los fideos con salsa, el pollo y las verduras en tazones; cubra con pepino y zanahorias. ¡A disfrutar!'} 
-        ]
+        ],
+        comensales:1,
     },
     {
         id: 8,
@@ -240,7 +247,8 @@ const recipes = [
             {step: 3, describe:'Mientras tanto, lave, seque y corte los tomates en rodajas finas. Haz lo mismo con el pepeino. Colócalos en un plato y sazona con sal y pimienta.'},
             {step: 4, describe:'Corta las pitas por la mitad y abre con cuidado los bolsillos. Unte cada bolsillo con hummus y luego rellénelo con rodajas de tomate y pepino.'},
             {step: 5, describe:'Divida la sopa en tazones y espolvoree con queso parmesano; sirva con bolsillos de pita a un lado. ¡A disfrutar!'}
-        ]
+        ],
+        comensales:1,
     },
 
   ];

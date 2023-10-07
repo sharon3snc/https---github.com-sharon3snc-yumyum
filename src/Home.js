@@ -1,7 +1,6 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import './Home.css';
-import recipes from './datahome';
 import { usePlanContext } from './PlanContext';
 
 function Home() {
@@ -9,6 +8,25 @@ function Home() {
   const [selectedMenu, setSelectedMenu] = useState('Todos');
   const [selectedRestriccion, setSelectedRestriccion] = useState('Todos');
   const [searchQuery, setSearchQuery] = useState('');
+  const [recipes, setRecipes] = useState([]);
+
+  useEffect(() => {
+    fetch('http://localhost:8000/yum/create') 
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+      .then((data) => {
+        setRecipes(data); 
+      })
+      .catch((error) => {
+        console.error('Error al obtener las recetas:', error);
+      });
+  }, []);
+
+  console.log(recipes);
 
   const filteredRecipes = recipes.filter((recipe) => {
     const isMenuMatch =

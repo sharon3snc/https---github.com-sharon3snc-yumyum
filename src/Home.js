@@ -84,9 +84,6 @@ function Home() {
                 <Link to="/planes">Ir al Plan</Link>
               </li>
             )}
-            <li className="login-link">
-              <a href="/login">Login</a>
-            </li>
           </ul>
         </nav>
       </header>

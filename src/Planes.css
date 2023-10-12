@@ -9,14 +9,18 @@
 
 .ingredients-container{
   margin: 20px 20px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
 }
 
 .listcontainer{
-  padding: 0.5rem 2rem 2rem;
+    padding: 0.5rem 2rem 2rem;
     background-color: white;
     border-width: 1px;
     border-style: solid;
     border-color: rgb(230, 230, 212);
+    margin-top: 5px;
 }
 
 .ingredients-list {

@@ -29,6 +29,18 @@ function Planes() {
     }
   };
 
+  function sendShoppingListByEmail() {
+    const shoppingList = Object.keys(ingredientQuantities).map((ingredientName) => (
+      `${ingredientName}: ${ingredientQuantities[ingredientName].quantity} ${ingredientQuantities[ingredientName].unit}`
+    )).join('\n');
+
+    const subject = 'Lista de compras';
+    const body = `¡Aquí está tu lista de compras semanal!\n\n${shoppingList}`;
+
+    const mailtoLink = `mailto:?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+    window.open(mailtoLink);
+  }
 
   mealPlan.forEach((recipe) => {
     recipe.ingredients.forEach((ingredient) => {
@@ -42,9 +54,11 @@ function Planes() {
         }
       }
     });
-  });
+  }
+  
+  );
 
-
+  
 return (
   <div>
     <header>
@@ -52,11 +66,8 @@ return (
             <nav>
               <ul>
               <li className="login-link">
-                <Link to="/">Inicio</Link>
+                <Link to="/">Agregar más recetas</Link>
               </li>
-                <li className="login-link">
-                  <a href="/login">Login</a>
-                </li>
               </ul>
             </nav>
       </header>
@@ -75,6 +86,7 @@ return (
                 <option value="4">4 personas</option>
               </select>
               <button onClick={() => removeFromMealPlan(recipe.id)}>Eliminar</button>
+              
             </div>
           ))}
           </div>
@@ -82,6 +94,9 @@ return (
 
         <div className="ingredients-container">
           <h2>Lista de la compra</h2>
+          <div>
+          <button onClick={sendShoppingListByEmail}>Enviar por mail</button>
+          </div>
           <div className="listcontainer">
             <ul className="ingredients-list">
               {Object.keys(ingredientQuantities).map((ingredientName, index) => (

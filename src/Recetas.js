@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import { Link, useParams } from 'react-router-dom';
 import './Home.css';
 import './Recetas.css';
+import { usePlanContext } from './PlanContext';
 
 function Recetas() {
   const { id } = useParams();
@@ -10,6 +11,8 @@ function Recetas() {
 
   const [activeTab, setActiveTab] = useState('ingredients');
   const [personas, setPersonas] = useState(1);
+
+  const {mealPlan, setMealPlan} = usePlanContext();
 
   useEffect(() => {
     const fetchRecipe = async () => {
@@ -80,6 +83,20 @@ function Recetas() {
     }
   };
 
+  const addToMealPlan = (recipe) => {
+    const isRecipeInMealPlan = mealPlan.some((selectedRecipe) => selectedRecipe.id === recipe.id);
+    if (!isRecipeInMealPlan) {
+      setMealPlan((prevMealPlan) => [...prevMealPlan, recipe]);
+    }
+  };
+  console.log(mealPlan);
+
+  const removeFromMealPlan = (recipe) => {
+    setMealPlan((prevMealPlan) =>
+    prevMealPlan.filter((selectedRecipe) => selectedRecipe !== recipe)
+    );
+  };
+
   return (
     <div>
       {/* Header de la página */}
@@ -88,11 +105,13 @@ function Recetas() {
         <nav>
           <ul>
             <li className="login-link">
-                <Link to="/">Inicio</Link>
+                <Link to="/">Ver todas las recetas</Link>
             </li>
-            <li className="login-link">
-                  <a href="/login">Login</a>
-            </li>
+            {mealPlan.length > 0 && (
+                <li className="plan-link">
+                <Link to="/planes">Ir al Plan</Link>
+                </li>
+            )}
           </ul>
         </nav>
       </header>
@@ -124,6 +143,13 @@ function Recetas() {
                   </div>
                   <div>
                     <img src={recipe.image} alt={recipe.name} height={600} width={600} className='recipeImage' />
+                  </div>
+                  <div>
+                  {mealPlan.includes(recipe) ? (
+                  <button onClick={() => removeFromMealPlan(recipe)}>Eliminar</button>
+                ) : (
+                  <button onClick={() => addToMealPlan(recipe)}>Agregar al plan</button>
+                )}
                   </div>
                 </div>
                 <div className='reciperight'>

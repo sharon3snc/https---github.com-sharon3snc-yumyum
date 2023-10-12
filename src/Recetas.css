@@ -1,3 +1,9 @@
+nav li a{
+    margin-left: auto;
+    color: #fff;
+}
+
+
 section{
     margin-left: 50px;
     margin-top:50px;

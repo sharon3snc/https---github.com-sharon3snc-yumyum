@@ -1,14 +1,42 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import { Link, useParams } from 'react-router-dom';
+import './Home.css';
 import './Recetas.css';
-import recipes from './datahome';
 
 function Recetas() {
   const { id } = useParams();
-  const recipe = recipes.find((recipe) => recipe.id.toString() === id);
+  const [recipe, setRecipe] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   const [activeTab, setActiveTab] = useState('ingredients');
   const [personas, setPersonas] = useState(1);
+
+  useEffect(() => {
+    const fetchRecipe = async () => {
+      try {
+        const response = await fetch(`http://localhost:8000/yum/${id}`);
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        const data = await response.json();
+        setRecipe(data);
+      } catch (error) {
+        console.error('Error al obtener la receta:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchRecipe();
+  }, [id]);
+
+  if (loading) {
+    return <div>Cargando...</div>;
+  }
+
+  if (!recipe) {
+    return <div>No se encontró la receta.</div>;
+  }
 
   const handleTabClick = (tabName) => {
     setActiveTab(tabName);
@@ -59,8 +87,12 @@ function Recetas() {
         <h1>Yum Yum</h1>
         <nav>
           <ul>
-            <li><Link to="/">Inicio</Link></li>
-            <li><a href="/sobre-nosotros">Login</a></li>
+            <li className="login-link">
+                <Link to="/">Inicio</Link>
+            </li>
+            <li className="login-link">
+                  <a href="/login">Login</a>
+            </li>
           </ul>
         </nav>
       </header>

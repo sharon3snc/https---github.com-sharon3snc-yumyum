@@ -111,6 +111,9 @@ function Home() {
                 <option value="Sin lactosa">Sin lactosa</option>
               </select>
             </div>
+            <div className="crea">
+            <Link to="/crea" className="crea-link"> Crea tu receta </Link>
+            </div>
           </div>
 
           <div className="cardcontainer">

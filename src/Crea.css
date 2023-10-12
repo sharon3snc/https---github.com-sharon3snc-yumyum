@@ -1,0 +1,73 @@
+/* Estilo para el contenedor del formulario */
+.form-container {
+    margin: 0 auto;
+    padding: 20px;
+}
+
+  /* Estilo para el título del formulario */
+.form-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+  /* Estilo para las etiquetas de los campos de entrada */
+.form-label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+  /* Estilo para los campos de entrada de texto */
+.form-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+  /* Estilo para el botón de enviar */
+.form-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.form-button:hover {
+    background-color: #0056b3;
+}
+
+.ingredients-list2 {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .ingredients-list2 li {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #ccc;
+    padding: 10px;
+  }
+  
+  /* Estilo para los botones de eliminar ingredientes */
+  .ingredients-list2 button {
+    background-color: #ff5252;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+
+
+  .ingredient-style{
+    margin-right: 20px;
+  }
+

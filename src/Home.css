@@ -95,6 +95,19 @@ section {
     margin-right: 0.5rem;
 }
 
+.crea{
+    background-color: #025159;
+    border-radius: 8px;
+    margin-right: 0.5rem;
+    color: #fff;
+    padding: 5px 15px 5px 15px;
+    text-decoration:none;
+}
+.crea-link{
+    text-decoration:none;
+    color: #fff;
+}
+
 .menus{
     appearance: none;
     min-width: 110px;

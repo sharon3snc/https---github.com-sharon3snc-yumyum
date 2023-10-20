@@ -127,6 +127,7 @@ function Crea() {
 
     <main>
         <div className="form-container">
+        <h2 className="form-title">Mis Recetas</h2>
         <h2 className="form-title">Crea tu receta</h2>
         <form onSubmit={handleSubmit}>
             <label className="form-label">Nombre de la receta:

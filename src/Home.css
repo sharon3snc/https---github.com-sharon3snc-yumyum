@@ -120,6 +120,11 @@ section {
     top: auto;
     margin-right: 0.875rem;
     font-size: 15px;
+    text-align: left;
+}
+
+.menus option {
+    text-align: left;
 }
 
 .cardcontainer {

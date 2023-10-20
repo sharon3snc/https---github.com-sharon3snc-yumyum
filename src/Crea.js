@@ -8,7 +8,7 @@ import './Crea.css';
 function Crea() {
   const [recipe, setRecipe] = useState({
     name: '',
-    image: '',
+    image: 'https://cdn-icons-png.flaticon.com/512/2424/2424721.png',
     time: '',
     cal: '',
     menu: '',

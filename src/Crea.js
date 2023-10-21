@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import { Link} from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import './Home.css';
@@ -17,6 +17,14 @@ function Crea() {
     instructions: [],
     comensales: 1,
   });
+
+  const [allRecipes, setAllRecipes] = useState([]);
+  useEffect(()=> {
+    fetch('http://localhost:8000/yum/create')
+      .then((response) => response.json())
+      .then((data) => setAllRecipes(data))
+      .catch((error) => console.error('Error al obtener recetas:', error));
+  }, []);
 
   const [error, setError] = useState({});
   const [successMessage, setSuccessMessage] = useState('');
@@ -112,6 +120,24 @@ function Crea() {
     }
   };
 
+  const handleDeleteRecipe = (recipeId) => {
+    fetch(`http://localhost:8000/yum/delete/${recipeId}`, {
+      method: 'DELETE',
+    })
+      .then((response) => {
+        if (response.ok) {
+          // Eliminar la receta de la lista
+          setAllRecipes((prevRecipes) => prevRecipes.filter((recipe) => recipe.id !== recipeId));
+        } else {
+          console.error('Error al eliminar la receta');
+        }
+      })
+      .catch((error) => {
+        console.error('Error de red:', error);
+      });
+  };
+  
+
   return (
 <div>
     <header>
@@ -126,6 +152,22 @@ function Crea() {
       </header>
 
     <main>
+        <div className="creation-container">
+          <div className="cardcontainer">
+              {allRecipes
+                .filter((recipe) => recipe.id >= 9) // Filtrar recetas con ID >= 9
+                .map((recipe, index) => (
+                  <div className="card" key={index}>
+                    <Link to={`/recetas/${recipe.id}`}>
+                      <img src={recipe.image} alt="" />
+                      <div className="recipe">{recipe.name}</div>
+                    </Link>
+                    <button onClick={() => handleDeleteRecipe(recipe.id)}>Eliminar</button>
+                  </div>
+                ))}
+            </div>
+        </div>
+
         <div className="form-container">
         <h2 className="form-title">Mis Recetas</h2>
         <h2 className="form-title">Crea tu receta</h2>

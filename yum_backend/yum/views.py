@@ -17,3 +17,7 @@ class RecipesListCreateAPIView(generics.ListCreateAPIView):
 class RecipesUpdateAPIView(generics.UpdateAPIView):
     queryset = Recipes.objects.all()
     serializer_class = RecipesSerializer
+
+class RecipesDeleteAPIView(generics.DestroyAPIView):
+        queryset = Recipes.objects.all()
+        serializer_class = RecipesSerializer

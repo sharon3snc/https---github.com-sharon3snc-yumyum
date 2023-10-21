@@ -71,3 +71,22 @@
     margin-right: 20px;
   }
 
+main {
+  display:flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.cardcontainer2 {
+  display: grid;
+  margin: 20px 20px 20px 20px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.creation-container{
+  max-width: 500px;
+  margin:20px 20px 20px 20px;
+  background-color: #c4eef2;
+  height: 100vh;
+}

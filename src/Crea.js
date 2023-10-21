@@ -106,7 +106,7 @@ function Crea() {
         });
 
         if (response.ok) {
-          setSuccessMessage('Receta guardada correctamente');
+          setSuccessMessage('¡Receta guardada correctamente!');
           setTimeout(() => {
             // Redirigir al usuario al Home después de 2 segundos
             navigate('/');
@@ -153,7 +153,8 @@ function Crea() {
 
     <main>
         <div className="creation-container">
-          <div className="cardcontainer">
+        <h2 className="form-title">Mis Recetas</h2>
+          <div className="cardcontainer2">
               {allRecipes
                 .filter((recipe) => recipe.id >= 9) // Filtrar recetas con ID >= 9
                 .map((recipe, index) => (
@@ -169,8 +170,11 @@ function Crea() {
         </div>
 
         <div className="form-container">
-        <h2 className="form-title">Mis Recetas</h2>
         <h2 className="form-title">Crea tu receta</h2>
+        {successMessage && (
+          <div className="success-message">{successMessage}</div>
+        )}
+
         <form onSubmit={handleSubmit}>
             <label className="form-label">Nombre de la receta:
             <input type="text" name="name" value={recipe.name} onChange={handleChange} className="form-input"/>
